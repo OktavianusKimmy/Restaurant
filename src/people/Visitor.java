@@ -1,4 +1,4 @@
-package main;
+package people;
 
 import java.text.NumberFormat;
 import java.util.Locale;

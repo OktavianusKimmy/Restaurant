@@ -4,10 +4,9 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Locale;
 
-import main.Chef;
 import main.Food;
-import main.Menu;
-import main.Visitor;
+import people.Chef;
+import people.Visitor;
 
 public class Restaurant {
 	private String name;

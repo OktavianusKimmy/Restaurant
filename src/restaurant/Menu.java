@@ -1,6 +1,8 @@
-package main;
+package restaurant;
 
 import java.util.ArrayList;
+
+import main.Food;
 
 public class Menu {
 	private String jenisMakanan;
