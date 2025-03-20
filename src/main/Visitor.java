@@ -1,5 +1,8 @@
 package main;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class Visitor {
 	private String name;
 	
@@ -17,9 +20,12 @@ public class Visitor {
 		totalPrice += price;
 	}
 	
-	Format format = new Format();
+	public static String formatIDR(int amount) {
+		NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+		return formatter.format(amount);
+	}
 	
 	public void showTotalPrice() {
-		System.out.println(name + "'s total price: " + format.formatting(totalPrice));
+		System.out.println(name + "'s total price: " + formatIDR(totalPrice));
 	}
 }

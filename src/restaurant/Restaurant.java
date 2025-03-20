@@ -1,10 +1,11 @@
 package restaurant;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import main.Chef;
 import main.Food;
-import main.Format;
 import main.Menu;
 import main.Visitor;
 
@@ -35,14 +36,17 @@ public class Restaurant {
 		chefs.add(chef);
 	}
 	
-	Format format = new Format();
+	public static String formatIDR(int amount) {
+		NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+		return formatter.format(amount);
+	}
 	
 	public void showMenu() {
 		System.out.println(name + "'s menu:");
 		for(Menu menu : menus) {
 			System.out.println(menu.getJenisMakanan() + ":");
 			for(Food food : menu.getFoods()) {
-				System.out.println("  - " + food.getMakanan() + " - " + format.formatting(food.getHarga()));
+				System.out.println("  - " + food.getMakanan() + " - " + formatIDR(food.getHarga()));
 			}
 		}
 	}
@@ -79,6 +83,6 @@ public class Restaurant {
 	}
 	
 	public void showTotalIncome() {
-		System.out.println(name + "'s Total Income: " + format.formatting(totalIncome));
+		System.out.println(name + "'s Total Income: " + formatIDR(totalIncome));
 	}
 }
