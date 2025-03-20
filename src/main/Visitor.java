@@ -17,7 +17,9 @@ public class Visitor {
 		totalPrice += price;
 	}
 	
+	Format format = new Format();
+	
 	public void showTotalPrice() {
-		System.out.println(name + "'s total price: " + totalPrice);
+		System.out.println(name + "'s total price: " + format.formatting(totalPrice));
 	}
 }

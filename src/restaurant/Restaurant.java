@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import main.Chef;
 import main.Food;
+import main.Format;
 import main.Menu;
 import main.Visitor;
 
@@ -34,12 +35,14 @@ public class Restaurant {
 		chefs.add(chef);
 	}
 	
+	Format format = new Format();
+	
 	public void showMenu() {
 		System.out.println(name + "'s menu:");
 		for(Menu menu : menus) {
 			System.out.println(menu.getJenisMakanan() + ":");
 			for(Food food : menu.getFoods()) {
-				System.out.println("  - " + food.getMakanan() + " - " + food.getHarga());
+				System.out.println("  - " + food.getMakanan() + " - " + format.formatting(food.getHarga()));
 			}
 		}
 	}
@@ -76,6 +79,6 @@ public class Restaurant {
 	}
 	
 	public void showTotalIncome() {
-		System.out.println(name + " Total Income: " + totalIncome);
+		System.out.println(name + "'s Total Income: " + format.formatting(totalIncome));
 	}
 }

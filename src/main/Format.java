@@ -1,0 +1,11 @@
+package main;
+
+import java.text.NumberFormat;
+import java.util.Locale;
+
+public class Format {
+	public String formatting(int price) {
+		NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+		return formatter.format(price);
+	}
+}
